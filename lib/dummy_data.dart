@@ -215,7 +215,7 @@ const DUMMY_MEALS = const [
       'Dice the salmon',
       'Process mustard, vinegar and olive oil into a dessing',
       'Prepare the salad',
-      'Add salmon cubes and dressing'
+      'Add salmon cubes and dressing',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -282,7 +282,7 @@ const DUMMY_MEALS = const [
       'In a large bowl, sift together the flour, baking powder, salt and sugar.',
       'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
       'Heat a lightly oiled griddle or frying pan over medium high heat.',
-      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -315,7 +315,7 @@ const DUMMY_MEALS = const [
       'Add spices and stir fry',
       'Add chicken breast + 250ml of water and cook everything for 10 minutes',
       'Add coconut milk',
-      'Serve with rice'
+      'Serve with rice',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -389,7 +389,7 @@ const DUMMY_MEALS = const [
       '30g Pine Nuts',
       '300g Cherry Tomatoes',
       'Salad',
-      'Salt, Pepper and Olive Oil'
+      'Salt, Pepper and Olive Oil',
     ],
     steps: [
       'Wash, peel and cut the asparagus',
@@ -398,7 +398,7 @@ const DUMMY_MEALS = const [
       'Roast the pine nuts',
       'Halve the tomatoes',
       'Mix with asparagus, salad and dressing',
-      'Serve with Baguette'
+      'Serve with Baguette',
     ],
     isGlutenFree: true,
     isVegan: true,
