@@ -109,9 +109,7 @@ class MealItem extends StatelessWidget {
                       Icon(
                         Icons.schedule,
                       ),
-                      SizedBox(
-                        width: 6
-                      ),
+                      SizedBox(width: 6),
                       Text('$duration min'),
                     ],
                   ),
@@ -120,21 +118,15 @@ class MealItem extends StatelessWidget {
                       Icon(
                         Icons.work,
                       ),
-                      SizedBox(
-                        width: 6
-                      ),
+                      SizedBox(width: 6),
                       Text(complexityText),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(
-                        Icons.attach_money
-                      ),
-                      SizedBox(
-                        width: 6
-                      ),
-                      Text(affordabilityText)
+                      Icon(Icons.attach_money),
+                      SizedBox(width: 6),
+                      Text(affordabilityText),
                     ],
                   ),
                 ],
