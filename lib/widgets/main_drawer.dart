@@ -6,7 +6,8 @@ class MainDrawer extends StatelessWidget {
   Widget buildListTile(
     String title,
     IconData icon,
-    Function tapHandler,
+    BuildContext context,
+    String routeName,
   ) {
     return ListTile(
       leading: Icon(
@@ -21,12 +22,13 @@ class MainDrawer extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      onTap: tapHandler,
+      onTap: () => Navigator.of(context).pushNamed(routeName),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Drawer(
       child: Column(
         children: [
@@ -35,24 +37,29 @@ class MainDrawer extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(20),
             alignment: Alignment.centerLeft,
-            color: Theme.of(context).accentColor,
+            color: theme.accentColor,
             child: Text(
               'Cooking Up!',
               style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 30,
-                  color: Theme.of(context).primaryColor),
+                fontWeight: FontWeight.w900,
+                fontSize: 30,
+                color: theme.primaryColor,
+              ),
             ),
           ),
-          SizedBox(
-            height: 20,
+          SizedBox(height: 20),
+          buildListTile(
+            'Meals',
+            Icons.restaurant,
+            context,
+            TabsScreen.routeName,
           ),
-          buildListTile('Meals', Icons.restaurant, () {
-            Navigator.of(context).pushNamed(TabsScreen.routeName);
-          }),
-          buildListTile('Filters', Icons.settings, () {
-            Navigator.of(context).pushNamed(FiltersScreen.routeName);
-          }),
+          buildListTile(
+            'Filters',
+            Icons.settings,
+            context,
+            FiltersScreen.routeName,
+          )
         ],
       ),
     );

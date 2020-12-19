@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/category_meals_screen.dart';
 
 import '../dummy_data.dart';
 import '../widgets/category_item.dart';
@@ -15,6 +16,7 @@ class CategoriesScreen extends StatelessWidget {
                 catData.id,
                 catData.title,
                 catData.color,
+                CategoryMealsScreen.routeName,
               ),
             )
             .toList(),
