@@ -45,21 +45,15 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
       ),
-      // home: CategoriesScreen(),
-      initialRoute: '/',
+      initialRoute: TabsScreen.routeName,
       routes: {
         TabsScreen.routeName: (ctx) => TabsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
         FiltersScreen.routeName: (ctx) => FiltersScreen(),
       },
-      onGenerateRoute: (settings) {
-        print(settings.arguments);
-        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
-      },
-      onUnknownRoute: (setting) {
-        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
-      },
+      onGenerateRoute: (settings) => MaterialPageRoute(builder: (ctx) => CategoriesScreen()),
+      onUnknownRoute: (setting) => MaterialPageRoute(builder: (ctx) => CategoriesScreen()),
     );
   }
 }
