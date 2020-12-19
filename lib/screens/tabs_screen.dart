@@ -12,7 +12,10 @@ class TabsScreen extends StatefulWidget {
 
 class _TabsScreenState extends State<TabsScreen> {
   final List<Map<String, Object>> _pages = [
-    {'page': CategoriesScreen(), 'title': 'Categories'},
+    {
+      'page': CategoriesScreen(),
+      'title': 'Categories',
+    },
     {
       'page': FavoritesScreen(),
       'title': 'Your favorite',
