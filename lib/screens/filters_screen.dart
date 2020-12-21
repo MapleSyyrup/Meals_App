@@ -28,21 +28,13 @@ class _FiltersScreenState extends State<FiltersScreen> {
     );
   }
 
-  void changeGlutenFree(newValue) {
-    setState(() => _glutenFree = newValue);
-  }
+  void changeGlutenFree(newValue) => setState(() => _glutenFree = newValue);
 
-  void changeLactoseFree(newValue) {
-    setState(() => _lactoseFree = newValue);
-  }
+  void changeLactoseFree(newValue) => setState(() => _lactoseFree = newValue);
 
-  void changeVegetarian(newValue) {
-    setState(() => _vegetarian = newValue);
-  }
+  void changeVegetarian(newValue) => setState(() => _vegetarian = newValue);
 
-  void changeVegan(newValue) {
-    setState(() => _vegan = newValue);
-  }
+  void changeVegan(newValue) => setState(() => _vegan = newValue);
 
   @override
   Widget build(BuildContext context) {
