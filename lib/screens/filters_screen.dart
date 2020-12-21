@@ -29,27 +29,19 @@ class _FiltersScreenState extends State<FiltersScreen> {
   }
 
   void changeGlutenFree(newValue) {
-    setState(
-      () => _glutenFree = newValue,
-    );
+    setState(() => _glutenFree = newValue);
   }
 
   void changeLactoseFree(newValue) {
-    setState(
-      () => _lactoseFree = newValue,
-    );
+    setState(() => _lactoseFree = newValue);
   }
 
   void changeVegetarian(newValue) {
-    setState(
-      () => _vegetarian = newValue,
-    );
+    setState(() => _vegetarian = newValue);
   }
 
   void changeVegan(newValue) {
-    setState(
-      () => _vegan = newValue,
-    );
+    setState(() => _vegan = newValue);
   }
 
   @override
@@ -75,33 +67,25 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   'Gluten-free',
                   'Only include gluten-free meals',
                   _glutenFree,
-                  (newValue) {
-                    changeGlutenFree(newValue);
-                  },
+                  changeGlutenFree,
                 ),
                 _buildSwitchListTile(
                   'Lactose-free',
                   'Only include lactose-free meals',
                   _lactoseFree,
-                  (newValue) {
-                    changeLactoseFree(newValue);
-                  },
+                  changeLactoseFree,
                 ),
                 _buildSwitchListTile(
                   'Vegetarian',
                   'Only include vegetarian meals',
                   _vegetarian,
-                  (newValue) {
-                    changeVegetarian(newValue);
-                  },
+                  changeVegetarian,
                 ),
                 _buildSwitchListTile(
                   'Vegan',
                   'Only include vegan meals',
                   _vegan,
-                  (newValue) {
-                    changeVegan(newValue);
-                  },
+                  changeVegan,
                 ),
               ],
             ),
