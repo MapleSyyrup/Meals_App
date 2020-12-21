@@ -28,6 +28,30 @@ class _FiltersScreenState extends State<FiltersScreen> {
     );
   }
 
+  void changeGlutenFree(newValue) {
+    setState(
+      () => _glutenFree = newValue,
+    );
+  }
+
+  void changeLactoseFree(newValue) {
+    setState(
+      () => _lactoseFree = newValue,
+    );
+  }
+
+  void changeVegetarian(newValue) {
+    setState(
+      () => _vegetarian = newValue,
+    );
+  }
+
+  void changeVegan(newValue) {
+    setState(
+      () => _vegan = newValue,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +76,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   'Only include gluten-free meals',
                   _glutenFree,
                   (newValue) {
-                    setState(
-                      () => _glutenFree = newValue,
-                    );
+                    changeGlutenFree(newValue);
                   },
                 ),
                 _buildSwitchListTile(
@@ -62,9 +84,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   'Only include lactose-free meals',
                   _lactoseFree,
                   (newValue) {
-                    setState(
-                      () => _lactoseFree = newValue,
-                    );
+                    changeLactoseFree(newValue);
                   },
                 ),
                 _buildSwitchListTile(
@@ -72,9 +92,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   'Only include vegetarian meals',
                   _vegetarian,
                   (newValue) {
-                    setState(
-                      () => _vegetarian = newValue,
-                    );
+                    changeVegetarian(newValue);
                   },
                 ),
                 _buildSwitchListTile(
@@ -82,9 +100,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   'Only include vegan meals',
                   _vegan,
                   (newValue) {
-                    setState(
-                      () => _vegan = newValue,
-                    );
+                    changeVegan(newValue);
                   },
                 ),
               ],
