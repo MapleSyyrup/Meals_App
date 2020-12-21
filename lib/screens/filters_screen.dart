@@ -20,13 +20,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     var currentValue,
     Function updateValue,
   ) {
-    return SwitchListTile(
-        title: Text(title),
-        value: currentValue,
-        subtitle: Text(
-          description,
-        ),
-        onChanged: updateValue);
+    return SwitchListTile(title: Text(title), value: currentValue, subtitle: Text(description), onChanged: updateValue);
   }
 
   @override
