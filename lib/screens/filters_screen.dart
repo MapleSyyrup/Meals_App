@@ -20,7 +20,12 @@ class _FiltersScreenState extends State<FiltersScreen> {
     var currentValue,
     Function updateValue,
   ) {
-    return SwitchListTile(title: Text(title), value: currentValue, subtitle: Text(description), onChanged: updateValue);
+    return SwitchListTile(
+      title: Text(title),
+      value: currentValue,
+      subtitle: Text(description),
+      onChanged: updateValue,
+    );
   }
 
   @override
@@ -48,9 +53,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   _glutenFree,
                   (newValue) {
                     setState(
-                      () {
-                        _glutenFree = newValue;
-                      },
+                      () => _glutenFree = newValue,
                     );
                   },
                 ),
@@ -60,9 +63,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   _lactoseFree,
                   (newValue) {
                     setState(
-                      () {
-                        _lactoseFree = newValue;
-                      },
+                      () => _lactoseFree = newValue,
                     );
                   },
                 ),
@@ -72,9 +73,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   _vegetarian,
                   (newValue) {
                     setState(
-                      () {
-                        _vegetarian = newValue;
-                      },
+                      () => _vegetarian = newValue,
                     );
                   },
                 ),
@@ -84,9 +83,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   _vegan,
                   (newValue) {
                     setState(
-                      () {
-                        _vegan = newValue;
-                      },
+                      () => _vegan = newValue,
                     );
                   },
                 ),
