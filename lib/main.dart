@@ -1,13 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/dummy_data.dart';
 import 'package:meals_app/screens/filters_screen.dart';
 import 'package:meals_app/screens/tabs_screen.dart';
 import 'screens/meal_detail_screen.dart';
 import 'screens/category_meals_screen.dart';
 import 'screens/categories_screen.dart';
+import './models/meal.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Map<String, bool> _filters = {
+    'gluten': false,
+    'lactose': false,
+    'vegan': false,
+    'vegetarian': false,
+  };
+
+  List<Meal> _availableMeals = DUMMY_MEALS;
+
+  void _setFilters(Map<String, bool> filterData) {
+    setState(() {
+      _filters = filterData;
+      _availableMeals = DUMMY_MEALS.where((meal) {
+        final filterGluten = _filters['gluten'] && !meal.isGlutenFree;
+        final filterLactose = _filters['lactose'] && !meal.isLactoseFree;
+        final filterVegan = _filters['vegan'] && !meal.isVegan;
+        final filterVegetarian = _filters['vegetarian'] && !meal.isVegetarian;
+
+        if (filterGluten) return false;
+
+        if (filterLactose) return false;
+
+        if (filterVegan) return false;
+
+        if (filterVegetarian) return false;
+
+        return true;
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,9 +86,12 @@ class MyApp extends StatelessWidget {
       initialRoute: TabsScreen.routeName,
       routes: {
         TabsScreen.routeName: (ctx) => TabsScreen(),
-        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(_availableMeals),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
-        FiltersScreen.routeName: (ctx) => FiltersScreen(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(
+              _filters,
+              _setFilters,
+            ),
       },
       onGenerateRoute: (settings) => MaterialPageRoute(builder: (ctx) => CategoriesScreen()),
       onUnknownRoute: (setting) => MaterialPageRoute(builder: (ctx) => CategoriesScreen()),
