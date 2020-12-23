@@ -80,7 +80,11 @@ class MealDetailScreen extends StatelessWidget {
             ),
             buildContainer(
               ListView.builder(
-                itemBuilder: (ctx, index) => Column(
+                itemBuilder: (
+                  ctx,
+                  index,
+                ) =>
+                    Column(
                   children: [
                     ListTile(
                       leading: CircleAvatar(child: Text('# ${(index + 1)}')),
@@ -99,7 +103,7 @@ class MealDetailScreen extends StatelessWidget {
         child: Icon(
           isFavorite(mealId) ? Icons.star : Icons.star_border,
         ),
-        onPressed: toggleFavorite,
+        onPressed: () => toggleFavorite(mealId),
       ),
     );
   }
