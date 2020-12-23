@@ -50,21 +50,13 @@ class _MyAppState extends State<MyApp> {
   void _toggleFavorite(String mealId) {
     final existingIndex = _favoriteMeals.indexWhere((meal) => meal.id == mealId);
     if (existingIndex >= 0) {
-      setState(() {
-        _favoriteMeals.removeAt(existingIndex);
-      });
+      setState(() => _favoriteMeals.removeAt(existingIndex));
     } else {
-      setState(() {
-        _favoriteMeals.add(
-          DUMMY_MEALS.firstWhere((meal) => meal.id == mealId),
-        );
-      });
+      setState(() => _favoriteMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId)));
     }
   }
 
-  bool _isMealFavorite(String id) {
-    return _favoriteMeals.any((meal) => meal.id == id);
-  }
+  bool _isMealFavorite(String id) => _favoriteMeals.any((meal) => meal.id == id);
 
   @override
   Widget build(BuildContext context) {
